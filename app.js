@@ -63,7 +63,8 @@ const formations = [
     ],
     satisfaction: 4.5,
     description: "Vie étudiante riche, nombreux projets collectifs et stages réguliers.",
-    etudiants: ["Emma, 20 ans", "Lucas, 21 ans", "Sarah, 19 ans"]
+    etudiants: ["Emma, 20 ans", "Lucas, 21 ans", "Sarah, 19 ans"],
+    image: "https://iutparis-seine.u-paris.fr/wp-content/uploads/sites/3/2022/03/UniversiteParisCite_IUTParis-RdS.jpg"
   },
   {
     nom: "Licence Psychologie",
