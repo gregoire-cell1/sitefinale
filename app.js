@@ -5,7 +5,7 @@ const navLinks = document.querySelectorAll('.nav-link, .btn-main');
 const sections = document.querySelectorAll('.page-section');
 
 function switchPage(pageId) {
-  // Affiche la section demandée, masque les autres
+  // Affiche la section ciblée et masque les autres
   sections.forEach(section => {
     if (section.id === pageId) {
       section.classList.add('active-section');
@@ -13,7 +13,7 @@ function switchPage(pageId) {
       section.classList.remove('active-section');
     }
   });
-  // Mettre à jour la classe active sur les liens
+  // Met à jour les liens actifs
   navLinks.forEach(link => {
     if(link.getAttribute('data-page') === pageId) {
       link.classList.add('active');
@@ -35,7 +35,7 @@ navLinks.forEach(link => {
 });
 
 /* =========================
-   Données des formations enrichies
+   Données et affichage des formations
 ============================ */
 const formations = [
   {
@@ -186,9 +186,6 @@ const formations = [
   }
 ];
 
-/* =========================
-   Génération des cartes formations
-============================ */
 const container = document.getElementById("cardsContainer");
 const searchInput = document.getElementById("searchInput");
 
@@ -243,9 +240,9 @@ if (contactForm) {
    Initialisation
 ============================ */
 document.addEventListener("DOMContentLoaded", () => {
-  // Affichage par défaut de la page d'accueil
+  // Afficher par défaut la page d'accueil
   switchPage("home");
-  // Rendu initial pour la section formations si visible
+  // Afficher les formations si la section est active
   if(document.getElementById("formations").classList.contains("active-section")) {
     renderCards();
   }
