@@ -1,0 +1,319 @@
+/* Variables globales et reset */
+:root {
+  --primary: #4f46e5;
+  --secondary: #7c3aed;
+  --accent: #f5f7fa;
+  --white: #ffffff;
+  --grey: #f9f9f9;
+  --text-color: #333;
+  --transition-speed: 0.3s;
+  --shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Classe utilitaire pour masquer un élément */
+.hidden {
+  display: none !important;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--accent);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  transition: color var(--transition-speed);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary);
+}
+
+/* Sections de pages */
+.page-section {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-speed) ease-out, transform var(--transition-speed) ease-out;
+  display: none;
+}
+
+.active-section {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SECTION ACCUEIL - Hero */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.hero-content {
+  flex: 1 1 400px;
+  text-align: center;
+  color: var(--white);
+}
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.hero-media {
+  flex: 1 1 400px;
+  text-align: center;
+}
+.hero-media img {
+  max-width: 100%;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+.btn-main {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--white);
+  color: var(--primary);
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background var(--transition-speed), color var(--transition-speed);
+}
+.btn-main:hover {
+  background: #f1f1f1;
+}
+
+/* SECTION À PROPOS */
+#about .section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+#about .section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.about-item {
+  background: var(--white);
+  padding: 2rem;
+  flex: 1 1 280px;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.about-item h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* SECTION FONCTIONNALITÉS */
+#features .section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+#features .section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+.features-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding: 0 1rem;
+}
+.feature-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.feature-card h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* SECTION FORMATIONS */
+#formations .section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.cards-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  padding: 1rem;
+}
+.card {
+  background: var(--white);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  transition: transform var(--transition-speed);
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card h2 {
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+.card p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+.card ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+/* Bouton remplacé : la fonctionnalité de contact étudiant est désactivée */
+.card button {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 1rem;
+  cursor: not-allowed;
+  transition: background var(--transition-speed);
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+.card button:hover {
+  background: var(--primary);
+}
+
+/* SECTION TÉMOIGNAGES */
+#testimonials .section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.testimonials-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.testimonial-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  flex: 1 1 300px;
+  text-align: center;
+}
+.testimonial-card h4 {
+  margin-top: 1rem;
+  color: var(--primary);
+}
+
+/* SECTION CONTACT */
+#contact .section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+.contact-confirmation {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-top: 2rem;
+}
+
+/* Footer */
+footer {
+  background: #eee;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 2rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .navbar { flex-direction: column; }
+  .nav-links { flex-direction: column; margin-top: 1rem; }
+  .nav-links li { margin: 0.5rem 0; }
+  .hero { flex-direction: column; }
+  .about-content,
+  .features-grid,
+  .testimonials-grid { flex-direction: column; align-items: center; }
+}
