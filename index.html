@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formation Finder - La transparence au service de votre avenir</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#home" data-page="home">Formation Finder</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home" data-page="home" class="nav-link active">Accueil</a></li>
+        <li><a href="#about" data-page="about" class="nav-link">À propos</a></li>
+        <li><a href="#features" data-page="features" class="nav-link">Fonctionnalités</a></li>
+        <li><a href="#formations" data-page="formations" class="nav-link">Formations</a></li>
+        <li><a href="#testimonials" data-page="testimonials" class="nav-link">Témoignages</a></li>
+        <li><a href="#contact" data-page="contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- SECTION ACCUEIL -->
+  <section id="home" class="page-section active-section">
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Bienvenue sur Formation Finder</h1>
+        <p>La plateforme qui connecte lycéens et étudiants pour des informations 100% transparentes sur les formations.</p>
+        <a href="#formations" data-page="formations" class="btn-main">Explorer les formations</a>
+      </div>
+      <div class="hero-media">
+        <!-- Remplacez l'URL par la vidéo ou l'image de votre choix -->
+        <img src="https://via.placeholder.com/600x400.png?text=Votre+Image+Impactante" alt="Image impactante" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION À PROPOS -->
+  <section id="about" class="page-section">
+    <div class="section-header">
+      <h2>À propos de nous</h2>
+      <p>Notre mission est d'offrir une information claire et authentique sur les formations afin de vous aider à choisir en toute confiance.</p>
+    </div>
+    <div class="about-content">
+      <div class="about-item">
+        <h3>Transparence</h3>
+        <p>Des retours d'expérience vérifiés et partagés par de vrais étudiants pour ne rien cacher.</p>
+      </div>
+      <div class="about-item">
+        <h3>Accessibilité</h3>
+        <p>Accédez facilement aux informations via une plateforme intuitive et mobile-friendly.</p>
+      </div>
+      <div class="about-item">
+        <h3>Communauté</h3>
+        <p>Rejoignez une communauté engagée et bénéficiez du partage de conseils et d’expériences.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section id="features" class="page-section">
+    <div class="section-header">
+      <h2>Nos Fonctionnalités</h2>
+      <p>Découvrez ce qui rend Formation Finder unique et indispensable.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>Recherche Avancée</h3>
+        <p>Filtrez et trouvez facilement la formation qui vous correspond grâce à un moteur de recherche performant.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Détails Complets</h3>
+        <p>Accédez à des informations détaillées sur chaque formation : durée, débouchés, coût, emploi du temps et plus.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Transparence Totale</h3>
+        <p>Des avis authentiques et des retours d'expérience de vrais étudiants pour une information fiable.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Contact Direct</h3>
+        <p>Engagez la conversation avec des étudiants et obtenez des conseils personnalisés (fonctionnalité en cours de développement).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FORMATIONS -->
+  <section id="formations" class="page-section">
+    <div class="section-header">
+      <h2>Nos Formations</h2>
+      <p>Découvrez en détail la diversité des formations pour vous orienter vers l'avenir.</p>
+      <div id="filters">
+        <input type="text" id="searchInput" placeholder="🔍 Rechercher une formation…" />
+      </div>
+    </div>
+    <div id="cardsContainer" class="cards-grid">
+      <!-- Les fiches de formations seront générées par app.js -->
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section id="testimonials" class="page-section">
+    <div class="section-header">
+      <h2>Témoignages</h2>
+      <p>Découvrez les retours d'expérience de nos utilisateurs.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p>"Grâce à Formation Finder, j'ai pu choisir la formation qui me correspond et éviter les mauvaises surprises!"</p>
+        <h4>— Alex, lycéen</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"Les conseils et avis transparents m'ont beaucoup aidé dans ma réorientation."</p>
+        <h4>— Marie, étudiante</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"Une plateforme unique offrant une information claire et sans détour. Je recommande chaudement!"</p>
+        <h4>— Julien, étudiant</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CONTACT -->
+  <section id="contact" class="page-section">
+    <div class="section-header">
+      <h2>Contactez-nous</h2>
+      <p>Vous avez des questions ? Remplissez le formulaire ci-dessous et nous vous répondrons rapidement.</p>
+    </div>
+    <form id="contactForm" class="contact-form">
+      <div class="form-group">
+        <label for="name">Nom / Prénom</label>
+        <input type="text" id="name" placeholder="Votre nom" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Votre email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" placeholder="Votre message" required></textarea>
+      </div>
+      <button type="submit" class="btn-main">Envoyer le message</button>
+    </form>
+    <div id="contactConfirmation" class="contact-confirmation hidden">
+      <p>Merci pour votre message ! Nous reviendrons vers vous rapidement.</p>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer>
+    <p>&copy; 2025 Formation Finder • Créé par des étudiants pour les étudiants.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
