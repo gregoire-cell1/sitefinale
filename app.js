@@ -9,13 +9,18 @@ function switchPage(pageId) {
   sections.forEach(section => {
     if (section.id === pageId) {
       section.classList.add('active-section');
+      // Si la page des formations est activée, on affiche les formations
+      if (pageId === "formations") {
+        renderCards();  // Affiche les formations dans la section
+      }
     } else {
       section.classList.remove('active-section');
     }
   });
+  
   // Met à jour les liens actifs
   navLinks.forEach(link => {
-    if(link.getAttribute('data-page') === pageId) {
+    if (link.getAttribute('data-page') === pageId) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');
