@@ -194,12 +194,15 @@ const formations = [
 ];
 
 const container = document.getElementById("cardsContainer");
-const searchInput = document.getElementById("searchInput");
 
 function createCard(formation) {
   const card = document.createElement("div");
   card.classList.add("card");
+
   card.innerHTML = `
+    <div class="card-image">
+      <img src="${formation.image}" alt="${formation.nom}">
+    </div>
     <h2>${formation.nom}</h2>
     <p><strong>Établissement :</strong> ${formation.etablissement}</p>
     <p><strong>Ville :</strong> ${formation.ville} <em>(${formation.transport})</em></p>
@@ -214,6 +217,7 @@ function createCard(formation) {
     <p><strong>Vie étudiante :</strong> ${formation.description}</p>
     <button disabled>Fonctionnalité indisponible</button>
   `;
+
   container.appendChild(card);
 }
 
