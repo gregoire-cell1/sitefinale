@@ -9,16 +9,17 @@ function switchPage(pageId) {
   sections.forEach(section => {
     if (section.id === pageId) {
       section.classList.add('active-section');
-      // Si la page des formations est activée, on affiche les formations
+      
+      // Si la page Formations est activée, afficher toutes les formations
       if (pageId === "formations") {
-        renderCards();  // Affiche les formations dans la section
+        renderCards();  // Affiche toutes les formations
       }
     } else {
       section.classList.remove('active-section');
     }
   });
   
-  // Met à jour les liens actifs
+  // Met à jour les liens actifs dans la navigation
   navLinks.forEach(link => {
     if (link.getAttribute('data-page') === pageId) {
       link.classList.add('active');
@@ -32,7 +33,7 @@ navLinks.forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     const targetPage = link.getAttribute('data-page');
-    if(targetPage) {
+    if (targetPage) {
       switchPage(targetPage);
       document.getElementById(targetPage).scrollIntoView({ behavior: 'smooth' });
     }
@@ -215,30 +216,9 @@ function createCard(formation) {
   container.appendChild(card);
 }
 
-function renderCards(filterText = "") {
-  container.innerHTML = "";
-  formations
-    .filter(formation => formation.nom.toLowerCase().includes(filterText.toLowerCase()))
-    .forEach(createCard);
-}
-
-if (searchInput) {
-  searchInput.addEventListener("input", e => renderCards(e.target.value));
-}
-
-/* =========================
-   Formulaire de Contact
-============================ */
-const contactForm = document.getElementById("contactForm");
-const contactConfirmation = document.getElementById("contactConfirmation");
-
-if (contactForm) {
-  contactForm.addEventListener("submit", function(e) {
-    e.preventDefault();
-    contactForm.reset();
-    contactForm.classList.add("hidden");
-    contactConfirmation.classList.remove("hidden");
-  });
+function renderCards() {
+  container.innerHTML = "";  // Efface les cartes existantes
+  formations.forEach(createCard);  // Crée et affiche toutes les cartes
 }
 
 /* =========================
@@ -247,8 +227,9 @@ if (contactForm) {
 document.addEventListener("DOMContentLoaded", () => {
   // Afficher par défaut la page d'accueil
   switchPage("home");
-  // Afficher les formations si la section est active
-  if(document.getElementById("formations").classList.contains("active-section")) {
-    renderCards();
+  
+  // Vérifier si la page Formations est déjà active au démarrage
+  if (document.getElementById("formations").classList.contains("active-section")) {
+    renderCards();  // Afficher toutes les formations si la page Formations est déjà active
   }
 });
